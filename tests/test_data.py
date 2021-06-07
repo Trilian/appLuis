@@ -1,5 +1,5 @@
 
-from modulesLuis import load_data,key_value_correspondence, transform_data
+from module_luis import load_data,key_value_correspondence, transform_data
 
 def test_key_value_correspondence() :
     arg = {'val': 'Caprica', 'key': 'or_city'}

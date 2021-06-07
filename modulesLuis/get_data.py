@@ -1,8 +1,6 @@
 
 import pandas as pd
-import modules.bot_creation as bc
-
-
+from modulesLuis import bot_creation as bc 
 def load_data(data_path) -> list:
     bot_conversation_df = pd.read_json(data_path)
     turns_series = bot_conversation_df['turns']

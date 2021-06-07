@@ -1,6 +1,5 @@
 
 from modulesLuis import load_data,key_value_correspondence, transform_data
-from modulesLuis import bot_creation as bc
 
 def test_key_value_correspondence() :
     arg = {'val': 'Caprica', 'key': 'or_city'}

@@ -2,6 +2,7 @@
 import pandas as pd
 from . import bot_creation as bc
 
+
 def load_data(data_path) -> list:
     bot_conversation_df = pd.read_json(data_path)
     turns_series = bot_conversation_df['turns']
@@ -9,8 +10,7 @@ def load_data(data_path) -> list:
 
     return turns_list
 
-
-def key_value_correspondence(association_value) :
+def key_value_correspondence(association_value):
     list_key = ['or_city', 'dst_city', 'str_date', 'end_date', 'budget']
     if 'key' in association_value and 'val' in association_value:
         if association_value['key'] in list_key and association_value['val'] != "-1" and association_value['val'] != None:

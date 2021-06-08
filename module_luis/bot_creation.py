@@ -15,7 +15,7 @@ import datetime
 import json
 import os
 import time
-from config import DefaultConfig
+from ..config import DefaultConfig
 CONFIG = DefaultConfig()
 
 # Instantiate a LUIS client

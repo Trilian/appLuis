@@ -1,26 +1,26 @@
 
-from ..module_luis import load_data,key_value_correspondence, transform_data
+from ..module_luis import get_data
 
 def test_key_value_correspondence() :
     arg = {'val': 'Caprica', 'key': 'or_city'}
-    cle_value_tuple = key_value_correspondence(arg)
+    cle_value_tuple = get_data._key_value_correspondence(arg)
     assert  cle_value_tuple == ("or_city", "Caprica")
 
 
 class TestCreateUtterance :
     data_path = "data/frames.json"
-    data_list = load_data(data_path)
+    data_list = get_data.load_data(data_path)
     
     def test_create_utterance_from_ref(self) :
         dialog_without_annoations = self.data_list[0:1]
         print(dialog_without_annoations)
-        list_final = transform_data(dialog_without_annoations)
+        list_final = get_data.transform_data(dialog_without_annoations)
         print(list_final)
         assert True
 
     def test_create_utterance_from_annotations(self) :
         dialog_with_annotations = self.data_list[2:3]
-        list_final = transform_data(dialog_with_annotations)
+        list_final = get_data.transform_data(dialog_with_annotations)
         print(list_final)
         list_final_test = [
             {'text': 'hello there i am looking to go on a vacation with my family to gotham city, can you help me?', 

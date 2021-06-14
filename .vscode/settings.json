@@ -1,4 +1,5 @@
 {
-    "python.pythonPath": "D:\\formations\\Anaconda\\envs\\projet10_2021\\python.exe",
-    "pythonTestExplorer.testFramework": "pytest"
+    "python.pythonPath": "D:\\formations\\IngenieurIA\\anaconda\\envs\\luisIntegration\\python.exe",
+    "pythonTestExplorer.testFramework": "pytest",
+    "jupyter.jupyterServerType": "local"
 }

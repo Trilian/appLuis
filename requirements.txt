@@ -1,2 +1,7 @@
 pandas>=1.2.4
 azure-cognitiveservices-language-luis>=0.2.0
+pycodestyle_magic
+pep8
+autopep8
+pytest
+pylint

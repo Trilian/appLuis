@@ -69,7 +69,7 @@ def transform_data(data_list):
                                         cle_value_tuple = _key_value_correspondence(
                                             annotation_value)
                                         if cle_value_tuple:
-                                            tuple_list.append(cle_value_tuple)
+                                            tuple_list.append(cle_value_tuple) 
                 if tuple_list:
                     utterance_tuple = tuple(tuple_list)
                     list_final.append(bc._create_utterance(

@@ -11,7 +11,7 @@ import time
 import json
 from azure.cognitiveservices.language.luis.authoring import LUISAuthoringClient
 from msrest.authentication import CognitiveServicesCredentials
-from ..config import DefaultConfig
+from config import DefaultConfig
 CONFIG = DefaultConfig()
 
 # Instantiate a LUIS client
@@ -77,6 +77,8 @@ def add_entities(app_id, app_version):
         app_id, app_version, name="end_date")
     print("flightEntityId {} added.".format(end_date_entity_id))
 
+    datetime_entity_id = client.model.add_prebuilt(app_id, app_version, prebuilt_extractor_names=["datetimeV2"])
+    print("flightEntityId {} added.".format(datetime_entity_id))
 
 def add_intents(app_id, app_version):
     '''
@@ -172,7 +174,7 @@ def train_app(app_id, app_version):
             waiting = False
 
 
-def evaluate_app(list_test, test_path) :
+def evaluate_app(test_path, list_test) :
     '''
         Allow to evaluate luis application off line
 
@@ -182,8 +184,7 @@ def evaluate_app(list_test, test_path) :
             Returns:
                     None
     '''
-    with open(test_path, "a") as f: 
-    
+    with open(test_path, "a") as f:   
         test_str = json.dumps(list_test)
         test_str = test_str.replace("intent_name","intent")
         test_str = test_str.replace("entity_labels","entities")
@@ -191,7 +192,7 @@ def evaluate_app(list_test, test_path) :
         test_str = test_str.replace("start_char_index","startPos")
         test_str = test_str.replace("end_char_index","endPos")
 
-    f.write(test_str)
+        f.write(test_str)
 
 def publish_app(app_id, app_version):
     '''

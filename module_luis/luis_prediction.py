@@ -7,7 +7,7 @@
 # This script runs under Python 3.4 or later.
 
 
-from ..config import DefaultConfig
+from config import DefaultConfig
 CONFIG = DefaultConfig()
 import json
 from azure.cognitiveservices.language.luis.runtime import LUISRuntimeClient

@@ -1,6 +1,7 @@
 
 from ..module_luis import get_data
 
+
 def test_key_value_correspondence() :
     arg = {'val': 'Caprica', 'key': 'or_city'}
     cle_value_tuple = get_data._key_value_correspondence(arg)
